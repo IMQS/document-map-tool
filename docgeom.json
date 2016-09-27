@@ -1,0 +1,15 @@
+{
+	"Logfile": "c:\\imqsvar\\logs\\docgeom.log",	
+	"postgresDB": {
+		"Driver": "postgres",
+		"Host": "127.0.0.1",
+		"Port": 5432,
+		"Database": "main",
+		"User": "imqs",
+		"Password": "1mq5p@55w0rd",
+		"SSL": false
+	},
+	"MongoDB": {
+		"Host": "localhost"
+	}
+}

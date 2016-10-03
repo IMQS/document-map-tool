@@ -4,7 +4,7 @@ import (
 	"fmt"
 
 	"github.com/IMQS/cli"
-	documentGeom "github.com/dbferreira/mongo2postgres"
+	documentGeom "github.com/IMQS/document-map-tool"
 )
 
 func main() {

@@ -32,10 +32,10 @@ func (x *PostgresDBConnection) connectionString(addDB bool) string {
 
 func (x *postgresDB) selectGeometry(tableName string, fieldName string, fieldValue string) (geom string, err error) {
 	r := strings.NewReplacer("<TABLE>", tableName, "<FIELD>", fieldName, "<VAL>", fieldValue)
-	sqlString := r.Replace("SELECT \"Geometry\" FROM \"<TABLE>\" WHERE \"<FIELD>\" = '<VAL>' LIMIT 1")
+	sqlString := r.Replace(`SELECT "Geometry" FROM "<TABLE>" WHERE "<FIELD>" = '<VAL>' LIMIT 1`)
 	err = x.db.QueryRow(sqlString).Scan(&geom)
 	if err != nil {
-		return "", errors.New("selectGeometry: Could not find element for field and value")
+		return "", errors.New("selectGeometry: Could not find element for field and value -> " + err.Error())
 	}
 	return geom, nil
 }

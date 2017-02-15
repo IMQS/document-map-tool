@@ -46,7 +46,7 @@ func (s *Server) readMongo() ([]documentGeometry, error) {
 	if err != nil {
 		panic(err)
 	}
-	return fetchMongoDBRecords(session)
+	return s.fetchMongoDBRecords(session)
 }
 
 func (s *Server) updatePostgres(documentGeometry *[]documentGeometry) error {
